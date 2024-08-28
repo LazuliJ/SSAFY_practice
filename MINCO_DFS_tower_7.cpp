@@ -1,4 +1,4 @@
-// 민코딩 DFS의 탑 7번
+// 민코딩 DFS의 탑 6번
 
 #include <iostream>
 #include <string>
