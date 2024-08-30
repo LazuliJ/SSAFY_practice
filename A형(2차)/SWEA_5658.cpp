@@ -1,4 +1,4 @@
-// SWEA 5658. º¸¹°»óÀÚ ºñ¹Ğ¹øÈ£
+// SWEA 5658. ë³´ë¬¼ìƒì ë¹„ë°€ë²ˆí˜¸
 
 #include <iostream>
 #include <queue>
@@ -12,7 +12,7 @@ int main() {
 	int N, K;
 	for (int t = 1; t <= T; t++) {
 		cin >> N >> K;
-		queue<char> strc; // ÀÔ·Â¹ŞÀº ÀüÃ¼ ¹®ÀÚ¿­
+		queue<char> strc; // ì…ë ¥ë°›ì€ ì „ì²´ ë¬¸ìì—´
 		priority_queue<int> ansq;
 		for (int i = 0; i < N; i++) {
 			char tmp;
@@ -23,7 +23,7 @@ int main() {
 			for (int j = 0; j < 4; j++) {
 				int k = 0; int num_tmp = 0;
 				while (k < N / 4) {
-					// 16Áø¼ö Á¤¼ö·Î º¯È¯ 
+					// 16ì§„ìˆ˜ ì •ìˆ˜ë¡œ ë³€í™˜ 
 					num_tmp *= 16;
 					char ctmp = strc.front(); strc.pop();
 					if (int(ctmp) >= int('A')) {
@@ -35,10 +35,10 @@ int main() {
 					strc.push(ctmp);
 					k++;
 				}
-				// ÈÄ priority queue¿¡ ³Ö±â
+				// í›„ priority queueì— ë„£ê¸°
 				ansq.push(num_tmp);
 			}
-			// ´Ù¸¥ Á¶ÇÕ ½Ãµµ
+			// ë‹¤ë¥¸ ì¡°í•© ì‹œë„
 			char ctmp = strc.front(); strc.pop(); strc.push(ctmp);
 		}
 		int scores = 1;
