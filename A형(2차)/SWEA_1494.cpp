@@ -24,6 +24,7 @@ long long ans;
 
 void DFS(int depth, long long ny, long long nx, int last_C) {
 	if (depth == (N / 2)) {
+		// x1 - x2 + x3 - x4 = x = x1+x3-(x2+x4) = (x1+x2+x3+x4) - 2(x2+x4) = allx - 2(x2+x4)
 		long long tmp = (ally - 2 * ny) *(ally - 2 * ny) + (allx - 2 * nx)*(allx - 2 * nx);
 		if (ans > tmp) ans = tmp;
 		return;
