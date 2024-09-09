@@ -12,4 +12,4 @@
 - ex) index = int('8') - int('0') == 8 (o)
   
 ## substr 문법
-- substr(start, end+1)이 아니라 **substr(start, range)**가 올바른 문법임에 유의.
+- substr(start, end+1)이 아니라 **substr(start, range)** 가 올바른 문법임에 유의.
