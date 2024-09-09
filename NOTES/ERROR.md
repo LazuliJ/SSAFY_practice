@@ -10,3 +10,6 @@
 - dat 인덱스를 int(문자)로 바꿀 때 'a', 'A', '0'이 index 0이 아니라는 점에 유의하자.
 - ex) index = int('8') =/= 8 (x)
 - ex) index = int('8') - int('0') == 8 (o)
+  
+## substr 문법
+- substr(start, end+1)이 아니라 **substr(start, range)**가 올바른 문법임에 유의.
