@@ -1,0 +1,6 @@
+// 프로그래머스 SUM, MAX, MIN문 연습 6번
+
+정답:
+SELECT COUNT(DISTINCT NAME) FROM ANIMAL_INS;
+
+중복제거하기: DISTINCT value
