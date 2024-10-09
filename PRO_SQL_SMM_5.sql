@@ -1,0 +1,4 @@
+-- 프로그래머스 SUM, MAX, MIN문 연습 5번
+
+--정답: 
+SELECT COUNT(ANIMAL_ID) FROM ANIMAL_INS;
