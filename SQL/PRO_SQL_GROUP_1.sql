@@ -1,0 +1,10 @@
+-- 프로그래머스 GROUP BY문 연습 10번
+
+--정답:
+SELECT a.CATEGORY, SUM(b.SALES) AS TOTAL_SALES FROM BOOK AS a 
+JOIN BOOK_SALES AS b ON a.BOOK_ID=b.BOOK_ID
+WHERE DATE_FORMAT(b.SALES_DATE, '%Y-%m')='2022-01'
+GROUP BY a.CATEGORY
+ORDER BY a.CATEGORY ASC;
+
+--날짜 형식 바꾸기: DATE_FORMAT(날짜 데이터, '형식'), 이를 이용해서 특정 날짜의 요소를 검색할 수 있다.
