@@ -1,0 +1,14 @@
+-- 프로그래머스 SUM, MAX, MIN문 연습 8번
+
+--정답:
+SELECT ID, FISH_NAME, LENGTH FROM FISH_INFO JOIN FISH_NAME_INFO 
+ON FISH_INFO.FISH_TYPE = FISH_NAME_INFO.FISH_TYPE
+WHERE (FISH_INFO.FISH_TYPE, LENGTH) IN 
+(SELECT FI.FISH_TYPE, MAX(LENGTH) FROM FISH_INFO AS FI
+JOIN FISH_NAME_INFO AS FNI ON FI.FISH_TYPE = FNI.FISH_TYPE
+GROUP BY FI.FISH_TYPE, FNI.FISH_NAME);
+
+--어려운 문제 (기회가 되면 다시 한번 풀어볼 것)
+--서브쿼리로 거르고, 한번 더 거른다는 생각으로 풀어본다.
+--GROUP BY 옵션 때문에 곤란할 때 SELECT 서브쿼리로 일단 조건에 만족하는 값들 일부를 뽑고 
+--WHERE를 이용해 해당 값들을 만족하는 줄의 다른 값들을 뽑는다.
