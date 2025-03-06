@@ -4,25 +4,28 @@
 using namespace std;
 
 // 백준 2606번 바이러스 - Linked List
+// 순서를 보장하지 않는 Linked List
 
 struct NODE {
 	int num;
 	NODE* next;
 };
 
-NODE HEAD[101];
-bool if_virus[101];
-NODE POOL[101 * 101];
-int pcnt = 0;
+NODE HEAD[101]; // 1번, 2번, 3번 컴퓨터...
+bool if_virus[101]; // 바이러스 감염 여부
+NODE POOL[101 * 101]; // 할당할 수 있는 메모리 모음
+int pcnt = 0; // 중복 할당 방지
 
-int computer_numbers;
-int connectivity;
+int computer_numbers; // 컴퓨터 갯수
+int connectivity; // 연결 갯수
 
+// input
 void input() {
 	cin >> computer_numbers;
 	cin >> connectivity;
 }
 
+// v번 컴퓨터에 연결된 u번 컴퓨터
 void connect(int u, int v) {
 	NODE *now = &POOL[pcnt++];
 	now->num = u;
@@ -31,6 +34,7 @@ void connect(int u, int v) {
 	HEAD[v].next = now;
 }
 
+// BFS를 통해 감염된 컴퓨터를 탐색
 int BFS() {
 	deque<int> dq;
 	int ans = 0;
